@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { AppointmentDetailView } from './AppointmentDetailView';
 
 const appointmentTimeOfDay = startsAt => {
@@ -16,8 +17,8 @@ export const AppointmentsDayView = ({ appointments }) => {
   );
 
   return (
-    <div id="appointmentsDayView" style="display:flex">
-    <div id="days" style="width:20%">
+    <div id="appointmentsDayView" style={{display:'flex' }}>
+    <div id="days">
       <ol>
         {appointments.map((appointment, i) => (
           <li key={appointment.startsAt}>
@@ -31,16 +32,15 @@ export const AppointmentsDayView = ({ appointments }) => {
       </ol>
       
       </div>
-      <div id="details" style="width:20%">  
+      <div id="details">
         {appointments.length === 0 ? (
-          <p>There are no appointments scheduled for today.</p>
-        ) : (
-          <>
-          <Appointment {...appointments[selectedAppointment]} />
-          <AppointmentDetailView customer={appointments[selectedAppointment].customer} /> 
-          </>
-        )}
-          
+        <p>There are no appointments scheduled for today.</p>
+      ) : (
+        <>
+        <Appointment {...appointments[selectedAppointment]} />
+        <AppointmentDetailView customer={appointments[selectedAppointment].customer}/>
+        </>      
+      )}
       </div>
     </div>
   );

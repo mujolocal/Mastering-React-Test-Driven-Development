@@ -108,11 +108,10 @@ describe('AppointmentsDayView', () => {
     render(<AppointmentsDayView appointments={appointments}/>);
     expect(container.querySelector('div#days')).not.toBeNull();
     expect(container.querySelector("div#details")).not.toBeNull();
-    expect(container.querySelector('div#appointmentsDayView'))
   })
 
-  it("render appointment detail view",()=>{
-    
-  })
+  // it("render appointment detail view",()=>{
+
+  // })
 
 });
