@@ -103,4 +103,16 @@ describe('AppointmentsDayView', () => {
     ReactTestUtils.Simulate.click(button);
     expect(container.textContent).toMatch('Jordan');
   });
+
+  it("two divs side by side", ()=>{
+    render(<AppointmentsDayView appointments={appointments}/>);
+    expect(container.querySelector('div#days')).not.toBeNull();
+    expect(container.querySelector("div#details")).not.toBeNull();
+    expect(container.querySelector('div#appointmentsDayView'))
+  })
+
+  it("render appointment detail view",()=>{
+    
+  })
+
 });
